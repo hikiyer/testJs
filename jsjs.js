@@ -1,13 +1,13 @@
- $('.icon-edit').one('click', function() {
+$('.icon-edit').one('click', function() {
             if ($(this).hasClass('fa-plus')) {
-                  var idParentCookie;
-                  idParentCookie = $.cookie('idParent')
+                  var idParentTagCookie;
+                  idParentTagCookie = $.cookie('idTagParent')
                   var id_button = $(this).attr('id');
                   var valParent =  $(this).attr('data-value');
                   var idTag = id_button.replace(/[^0-9]/g,"");
                   var idParent = valParent.replace(/[^0-9]/g,"");
-                  if ( idParentCookie !== idParent){
-                        $.cookie('idParent', JSON.stringify(idParent));
+                  if ( idParentTagCookie !== idParent+idTag){
+                        $.cookie('idTagParent', idParent+idTag);
                         // console.log(idTag);
                         // console.log(idTag);
                         // console.log('idTagCookie-' + idParentCookie);
